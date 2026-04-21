@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diana Coelho | Portfolio</title>
     <link rel="icon" type="image/png" href="src/assets/images/favicon.png">
+        <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
-    <header>
-        <button type="button" aria-label="Language switcher">PT / ENG</button>
-    </header>
     <main class="page">
         <section class="card" aria-label="Landing Page">
-            <h1><a href="index.html" style="color:inherit;text-decoration:none">Diana Coelho</a></h1>
+            <div class="footer-row">
+                <h1><a href="index.html">Diana Coelho</a></h1>
+                <footer class="page-footer">
+                    <a class="footer-contact" href="mailto:dianacoelho699@gmail.com">dianacoelho699@gmail.com</a>
+                    <span class="footer-separator">&amp;</span>
+                    <a class="footer-contact" href="https://instagram.com/diianarmc" target="_blank" rel="noreferrer">@diianarmc</a>
+                </footer>
+            </div>
 
             <nav class="button-grid" aria-label="Main Navigation">
-                <a href="src/pages/aboutme.html">About Me</a>
-                <a href="src/pages/film.html">Film</a>
-                <a href="src/pages/motion.html">Motion</a>
-                <a href="src/pages/fotografia.html">Fotografia</a>
-                <a href="src/pages/more.html">And More</a>
+                <a class="nav-about" href="src/pages/aboutme.html">ABOUT<br><span>ME</span></a>
+                <a class="nav-film" href="src/pages/film.html">FILM</a>
+                <a class="nav-motion" href="src/pages/motion.html">MOTION</a>
+                <a class="nav-photo" href="src/pages/fotografia.html">FOTOGRAPHY</a>
+                <a class="nav-more" href="src/pages/more.html">AND<br><span>MORE</span></a>
             </nav>
+
+            <button class="lang-btn" aria-label="Switch to English">PT.</button>
         </section>
     </main>
-
-    <footer>
-        dianacoelho699@gmail.com &amp; @diianarmc
-    </footer>
 </body>
 </html>

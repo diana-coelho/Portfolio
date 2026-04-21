@@ -1,2 +1,262 @@
-/* title color- 901313
-body color- 000000*/
+@font-face {
+  font-family: 'Gambarino';
+  src: url('../assets/fonts/Gambarino-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100%;
+  width: 100%;
+  background: #000 url('../assets/images/landingpage.jpg') center center / cover no-repeat fixed;
+  font-family: 'Gambarino', serif;
+  color: #901313;
+  position: relative;
+}
+
+.page,
+.card {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.card {
+  position: relative;
+  min-height: 100vh;
+}
+
+.footer-row {
+  position: absolute;
+  left: 4.2vw;
+  right: 5vw;
+  bottom: 4.2vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.footer-row h1,
+.footer-row h1 a {
+  font-family: 'Gambarino', serif;
+  position: relative;
+  margin: 0;
+  font-size: clamp(4.8rem, 9.2vw, 10rem);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color: #901313;
+  text-decoration: none;
+}
+
+.page-footer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin: 0 0 0.65rem;
+  padding: 0;
+  color: #901313;
+  font-size: clamp(1rem, 1.65vw, 1.8rem);
+  font-family: 'Gambarino', serif;
+  white-space: nowrap;
+}
+
+.page-footer .footer-contact {
+  color: #901313;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.1em;
+}
+
+.page-footer .footer-separator {
+  text-decoration: none;
+}
+
+nav.button-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+nav.button-grid a {
+  position: absolute;
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  color: #901313;
+  font-family: 'Gambarino', serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 88%;
+  letter-spacing: 0.01em;
+  text-align: left;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+nav.button-grid a:hover,
+nav.button-grid a:focus {
+  color: #7d0b0d;
+}
+
+.nav-about {
+  top: 27.2%;
+  left: 48.1%;
+}
+
+.nav-film {
+  top: 9.7%;
+  left: 74%;
+}
+
+.nav-motion {
+  top: 51.4%;
+  left: 61.3%;
+}
+
+.nav-photo {
+  top: 33.2%;
+  left: 82.7%;
+  transform: translateX(-50%);
+}
+
+.nav-more {
+  top: 60%;
+  left: 81.5%;
+  transform: translateX(-50%);
+}
+
+.nav-about br + span {
+  display: block;
+  margin-top: 0.28em; /* Slightly more vertical gap */
+  margin-left: 2.1em; /* Move 'ME' more to the left */
+}
+
+.nav-more br + span {
+  display: block;
+  margin-top: 0.28em; /* Slightly more vertical gap */
+  margin-left: -1.2em; /* Move 'MORE' a bit more left */
+  text-align: center;
+}
+
+.lang-btn {
+  position: absolute;
+  right: 4.8vw;
+  bottom: 18.2vh;
+  display: grid;
+  place-items: center;
+  width: clamp(3.2rem, 4.3vw, 4.6rem);
+  height: clamp(3.2rem, 4.3vw, 4.6rem);
+  border: 1.25px solid #901313;
+  border-radius: 50%;
+  background: none;
+  color: #901313;
+  font-family: 'Gambarino', serif;
+  font-size: clamp(1.35rem, 1.9vw, 2rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  body {
+    background-position: 38% center;
+    overflow-x: hidden;
+  }
+
+  .footer-row {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    min-height: 100vh;
+    padding: 0 1.25rem 1.5rem;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .footer-row h1,
+  .footer-row h1 a {
+    width: 100%;
+    font-size: clamp(4.5rem, 22vw, 7rem);
+    line-height: 0.88;
+    white-space: normal;
+  }
+
+  .page-footer {
+    width: 100%;
+    margin: 0 0 1rem;
+    font-size: clamp(0.95rem, 4vw, 1.2rem);
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    white-space: normal;
+  }
+
+  nav.button-grid a {
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+  }
+
+  .nav-about {
+    top: 20%;
+    left: 55%;
+  }
+
+  .nav-film {
+    top: 10%;
+    left: 70%;
+  }
+
+  .nav-photo {
+    top: 29%;
+    left: 79%;
+  }
+
+  .nav-motion {
+    top: 47%;
+    left: 58%;
+  }
+
+  .nav-more {
+    top: 60%;
+    left: 79%;
+  }
+
+  .lang-btn {
+    right: 1.5rem;
+    bottom: 12.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.55rem;
+  }
+}
