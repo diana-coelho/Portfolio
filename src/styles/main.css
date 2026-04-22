@@ -357,12 +357,12 @@ nav.button-grid a:focus {
   color: #000;
 }
 
+
+.about-nav a.is-active {
+  color: #000;
+}
 .about-nav a:not(.is-active) {
   color: #901313;
-}
-
-.about-nav a:nth-child(2) {
-  color: #000;
 }
 
 .about-nav span {
