@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "about_html": "SOBRE<br><span>MIM</span>",
+    "photography": "FOTOGRAFIA",
+    "film": "FILME",
+    "motion": "MOTION",
+    "more_html": "E<br><span>MAIS</span>"
+  },
+  "lang": {
+    "button_to_en": "EN.",
+    "button_to_pt": "PT.",
+    "aria_to_en": "Mudar para Ingles",
+    "aria_to_pt": "Mudar para Portugues"
+  }
+}
+

@@ -463,21 +463,23 @@ nav.button-grid a:focus {
 }
 
 .project-page-body {
-  min-height: 100vh;
+  height: 100vh;
   background: #fffcee;
   color: #111;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .project-page {
   flex: 1;
+  height: 100vh;
   padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4.2vw, 3.75rem)
     calc(clamp(4.25rem, 7.5vw, 5.25rem) + env(safe-area-inset-bottom));
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(16rem, 22vw);
   gap: clamp(2rem, 6vw, 5rem);
-  align-items: start;
+  align-items: stretch;
 }
 
 .project-list {
@@ -487,6 +489,10 @@ nav.button-grid a:focus {
   flex-direction: column;
   gap: clamp(1.75rem, 4vh, 2.4rem);
   max-width: 58rem;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.75rem;
 }
 
 .project-row {
@@ -503,8 +509,8 @@ nav.button-grid a:focus {
   font-size: 30px;
   font-weight: 400;
   line-height: 0.95;
-  text-align: center;
-  justify-self: center;
+  text-align: left;
+  justify-self: start;
 }
 
 .project-thumb {
@@ -668,9 +674,20 @@ nav.button-grid a:focus {
 }
 
 @media (max-width: 900px) {
+  .project-page-body {
+    height: auto;
+    overflow: auto;
+  }
+
   .project-page {
+    height: auto;
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .project-list {
+    overflow: visible;
+    padding-right: 0;
   }
 
   .project-sidebar {

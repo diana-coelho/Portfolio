@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "about_html": "ABOUT<br><span>ME</span>",
+    "photography": "PHOTOGRAPHY",
+    "film": "FILM",
+    "motion": "MOTION",
+    "more_html": "AND<br><span>MORE</span>"
+  },
+  "lang": {
+    "button_to_en": "EN.",
+    "button_to_pt": "PT.",
+    "aria_to_en": "Switch to English",
+    "aria_to_pt": "Switch to Portuguese"
+  }
+}
+
