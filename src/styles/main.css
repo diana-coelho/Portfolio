@@ -472,7 +472,8 @@ nav.button-grid a:focus {
 
 .project-page {
   flex: 1;
-  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4.2vw, 3.75rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4.2vw, 3.75rem)
+    calc(clamp(4.25rem, 7.5vw, 5.25rem) + env(safe-area-inset-bottom));
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(16rem, 22vw);
   gap: clamp(2rem, 6vw, 5rem);
@@ -480,17 +481,18 @@ nav.button-grid a:focus {
 }
 
 .project-list {
-  padding-top: clamp(4rem, 8vh, 6.5rem);
+  padding-top: clamp(1rem, 2.4vh, 1.75rem);
   padding-bottom: clamp(3.5rem, 7vh, 5rem);
   display: flex;
   flex-direction: column;
   gap: clamp(1.75rem, 4vh, 2.4rem);
+  max-width: 58rem;
 }
 
 .project-row {
   display: grid;
-  grid-template-columns: minmax(16rem, 1fr) 220px minmax(8rem, 11rem);
-  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(12rem, 0.78fr) 200px minmax(7rem, 9.5rem);
+  gap: clamp(0.9rem, 2.4vw, 1.6rem);
   align-items: center;
 }
 
@@ -498,27 +500,31 @@ nav.button-grid a:focus {
   margin: 0;
   color: #000;
   font-family: 'Gambarino', serif;
-  font-size: clamp(2rem, 2.7vw, 2.8rem);
+  font-size: 30px;
   font-weight: 400;
   line-height: 0.95;
+  text-align: center;
+  justify-self: center;
 }
 
 .project-thumb {
-  width: 220px;
-  height: 130px;
+  width: 200px;
+  height: 118px;
   object-fit: cover;
   display: block;
+  justify-self: start;
 }
 
 .project-date {
   margin: 0;
   color: #901313;
   font-family: 'Gambarino', serif;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 88%;
   text-align: left;
   white-space: nowrap;
+  justify-self: start;
 }
 
 .project-sidebar {
@@ -618,12 +624,17 @@ nav.button-grid a:focus {
 }
 
 .project-footer {
-  margin-top: auto;
-  padding: 0 clamp(2rem, 4.2vw, 3.75rem) 0.45rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  padding: 0 clamp(2rem, 4.2vw, 3.75rem) calc(0.45rem + env(safe-area-inset-bottom));
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 2rem;
+  background: #fffcee;
 }
 
 .project-signature,
@@ -690,6 +701,16 @@ nav.button-grid a:focus {
   .project-row {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+  }
+
+  .project-title {
+    font-size: clamp(1.65rem, 6.6vw, 2rem);
+    text-align: left;
+    justify-self: start;
+  }
+
+  .project-date {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
   }
 
   .project-thumb {
