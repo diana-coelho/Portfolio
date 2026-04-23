@@ -462,6 +462,252 @@ nav.button-grid a:focus {
   text-underline-offset: 0.08em;
 }
 
+.project-page-body {
+  min-height: 100vh;
+  background: #fffcee;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-page {
+  flex: 1;
+  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4.2vw, 3.75rem) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 22vw);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.project-list {
+  padding-top: clamp(4rem, 8vh, 6.5rem);
+  padding-bottom: clamp(3.5rem, 7vh, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 4vh, 2.4rem);
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(16rem, 1fr) 220px minmax(8rem, 11rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.project-title {
+  margin: 0;
+  color: #000;
+  font-family: 'Gambarino', serif;
+  font-size: clamp(2rem, 2.7vw, 2.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.project-thumb {
+  width: 220px;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-date {
+  margin: 0;
+  color: #901313;
+  font-family: 'Gambarino', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 88%;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.project-sidebar {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-top: clamp(0.5rem, 2vh, 1.25rem);
+  padding-bottom: clamp(3rem, 7vh, 4.5rem);
+}
+
+.project-nav {
+  position: relative;
+  width: clamp(12rem, 16vw, 15rem);
+  height: clamp(24rem, 39vw, 31rem);
+}
+
+.project-nav a {
+  position: absolute;
+  color: #901313;
+  font-family: 'Gambarino', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 88%;
+  letter-spacing: -0.015em;
+  text-align: right;
+  text-decoration: underline;
+  text-underline-offset: 0.08em;
+  text-decoration-thickness: 1px;
+}
+
+.project-nav a:hover,
+.project-nav a:focus {
+  color: #000;
+}
+
+.project-nav a[aria-current="page"] {
+  color: #000;
+}
+
+.project-nav span {
+  display: block;
+}
+
+.project-nav a:nth-child(1) span {
+  margin-top: 0.42em;
+  margin-right: -0.2em;
+}
+
+.project-nav a:nth-child(5) span {
+  margin-top: 0.42em;
+  margin-right: 0.95em;
+}
+
+.project-nav a:nth-child(1) {
+  top: 0;
+  right: 2.25rem;
+}
+
+.project-nav a:nth-child(2) {
+  top: 6.2rem;
+  right: -1rem;
+}
+
+.project-nav a:nth-child(3) {
+  top: 11.4rem;
+  right: 4rem;
+}
+
+.project-nav a:nth-child(4) {
+  top: 15.6rem;
+  right: 0;
+}
+
+.project-nav a:nth-child(5) {
+  top: 20.1rem;
+  right: 5.4rem;
+}
+
+.project-lang-btn {
+  position: absolute;
+  top: 27.6rem;
+  right: 0.2rem;
+  margin: 0;
+  width: 63px;
+  height: 63px;
+  border: 1.25px solid #901313;
+  border-radius: 50%;
+  background: transparent;
+  color: #901313;
+  font-family: 'Gambarino', serif;
+  font-size: clamp(1.65rem, 2vw, 2.1rem);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.project-footer {
+  margin-top: auto;
+  padding: 0 clamp(2rem, 4.2vw, 3.75rem) 0.45rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.project-signature,
+.project-signature a {
+  margin: 0;
+  color: #901313;
+  text-decoration: none;
+  font-family: 'Gambarino', serif;
+  font-size: clamp(2.45rem, 3.35vw, 3.75rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.project-contact {
+  margin: 0 0 0.15rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  color: #901313;
+  font-family: 'Gambarino', serif;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+}
+
+.project-contact a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.08em;
+}
+
+@media (max-width: 900px) {
+  .project-page {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-sidebar {
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+
+  .project-nav {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project-nav a {
+    position: static;
+    text-align: left;
+    font-size: clamp(1.65rem, 7vw, 2rem);
+  }
+
+  .project-lang-btn {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .project-thumb {
+    width: min(100%, 26rem);
+    height: auto;
+    aspect-ratio: 22 / 13;
+  }
+
+  .project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-contact {
+    justify-content: flex-start;
+  }
+}
+
 @media (max-width: 900px) {
   .about-page {
     grid-template-columns: 1fr;
