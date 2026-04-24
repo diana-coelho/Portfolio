@@ -6,6 +6,7 @@
     <title>Diana Coelho | Portfolio</title>
     <link rel="icon" type="image/png" href="src/assets/images/favicon.png">
         <link rel="stylesheet" href="src/styles/main.css">
+        <script src="src/js/main.js" defer></script>
 </head>
 <body>
     <main class="page">
@@ -20,14 +21,14 @@
             </div>
 
             <nav class="button-grid" aria-label="Main Navigation">
-                <a class="nav-about" href="src/pages/aboutme.html">ABOUT<br><span>ME</span></a>
-                <a class="nav-film" href="src/pages/film.html">FILM</a>
-                <a class="nav-motion" href="src/pages/motion.html">MOTION</a>
-                <a class="nav-photo" href="src/pages/fotografia.html">PHOTOGRAPHY</a>
-                <a class="nav-more" href="src/pages/more.html">AND<br><span>MORE</span></a>
+                <a class="nav-about" href="src/pages/aboutme.html" data-i18n-html="nav.about_html">ABOUT<br><span>ME</span></a>
+                <a class="nav-film" href="src/pages/film.html" data-i18n="nav.film">FILM</a>
+                <a class="nav-motion" href="src/pages/motion.html" data-i18n="nav.motion">MOTION</a>
+                <a class="nav-photo" href="src/pages/fotografia.html" data-i18n="nav.photography">PHOTOGRAPHY</a>
+                <a class="nav-more" href="#" aria-disabled="true" data-i18n-html="nav.more_html">AND<br><span>MORE</span></a>
             </nav>
 
-            <button class="lang-btn" aria-label="Switch to English">PT.</button>
+            <button class="lang-btn" data-lang-toggle type="button" aria-label="Switch to Portuguese">PT.</button>
         </section>
     </main>
 </body>

@@ -78,6 +78,11 @@
     applyMessages(messages);
     updateLangToggleButton(lang, messages);
 
+    document.addEventListener('click', (e) => {
+      const link = e.target && e.target.closest ? e.target.closest('a[aria-disabled="true"]') : null;
+      if (link) e.preventDefault();
+    });
+
     document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
       btn.addEventListener('click', async () => {
         lang = lang === 'en' ? 'pt' : 'en';
