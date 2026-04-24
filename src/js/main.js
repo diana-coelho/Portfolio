@@ -1,5 +1,6 @@
 (() => {
   const LANG_KEY = 'diana_lang';
+  const MSG_CACHE_PREFIX = 'diana_i18n_v1_';
 
   function getLang() {
     const saved = window.localStorage.getItem(LANG_KEY);
@@ -8,6 +9,25 @@
 
   function setLang(lang) {
     window.localStorage.setItem(LANG_KEY, lang);
+  }
+
+  function getCachedMessages(lang) {
+    try {
+      const raw = window.localStorage.getItem(`${MSG_CACHE_PREFIX}${lang}`);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === 'object' ? parsed : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function setCachedMessages(lang, messages) {
+    try {
+      window.localStorage.setItem(`${MSG_CACHE_PREFIX}${lang}`, JSON.stringify(messages));
+    } catch {
+      // ignore storage errors (quota/private mode)
+    }
   }
 
   function getScriptUrl() {
@@ -44,7 +64,9 @@
       try {
         const res = await fetch(url, { cache: 'no-store' });
         if (!res.ok) continue;
-        return res.json();
+        const json = await res.json();
+        if (json && typeof json === 'object') setCachedMessages(lang, json);
+        return json;
       } catch {
         // try next candidate
       }
@@ -98,7 +120,14 @@
 
   async function bootI18n() {
     let lang = getLang();
-    let messages = await loadMessages(lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.lang = lang;
+
+    let messages = getCachedMessages(lang);
+    applyMessages(messages);
+    updateLangToggleButton(lang, messages);
+
+    messages = await loadMessages(lang);
     applyMessages(messages);
     updateLangToggleButton(lang, messages);
 
@@ -111,6 +140,13 @@
       btn.addEventListener('click', async () => {
         lang = lang === 'en' ? 'pt' : 'en';
         setLang(lang);
+        document.documentElement.lang = lang;
+        document.documentElement.dataset.lang = lang;
+
+        messages = getCachedMessages(lang);
+        applyMessages(messages);
+        updateLangToggleButton(lang, messages);
+
         messages = await loadMessages(lang);
         applyMessages(messages);
         updateLangToggleButton(lang, messages);
