@@ -22,11 +22,35 @@
 
   async function loadMessages(lang) {
     const scriptUrl = getScriptUrl();
-    if (!scriptUrl) return null;
-    const url = new URL(`../i18n/${lang}.json`, scriptUrl);
-    const res = await fetch(url, { cache: 'no-store' });
-    if (!res.ok) return null;
-    return res.json();
+    const candidates = [];
+
+    if (scriptUrl) {
+      candidates.push(new URL(`../i18n/${lang}.json`, scriptUrl));
+    }
+
+    try {
+      candidates.push(new URL(`../i18n/${lang}.json`, window.location.href));
+      candidates.push(new URL(`src/i18n/${lang}.json`, window.location.href));
+    } catch {
+      // ignore
+    }
+
+    const seen = new Set();
+    for (const url of candidates) {
+      const key = url.toString();
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) continue;
+        return res.json();
+      } catch {
+        // try next candidate
+      }
+    }
+
+    return null;
   }
 
   function getKey(obj, key) {

@@ -682,12 +682,13 @@ nav.button-grid a[aria-disabled="true"]:focus {
   right: 0;
   bottom: 0;
   z-index: 50;
-  padding: 0 clamp(2rem, 4.2vw, 3.75rem) calc(0.45rem + env(safe-area-inset-bottom));
+  padding: 0 clamp(2rem, 4.2vw, 3.75rem) 0.45rem;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 2rem;
-  background: #fffcee;
+  background: transparent;
+  transform: translateY(-18px);
 }
 
 .project-signature,
