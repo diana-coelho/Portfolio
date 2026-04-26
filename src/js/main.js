@@ -118,6 +118,109 @@
     });
   }
 
+  function bootGalleryLightbox() {
+    const gallery = document.querySelector('[data-gallery]');
+    if (!gallery) return;
+
+    const images = Array.from(gallery.querySelectorAll('img'));
+    if (!images.length) return;
+
+    let overlay = document.querySelector('.lightbox');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'lightbox';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+
+      overlay.innerHTML = `
+        <button class="lightbox-close" type="button" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 1 0-1.4 1.4l4.9 4.9-4.9 4.9a1 1 0 1 0 1.4 1.4l4.9-4.9 4.9 4.9a1 1 0 0 0 1.4-1.4l-4.9-4.9 4.9-4.9a1 1 0 0 0 0-1.4Z"></path>
+          </svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M14.7 5.7a1 1 0 0 1 0 1.4L10.8 11l3.9 3.9a1 1 0 1 1-1.4 1.4l-4.6-4.6a1 1 0 0 1 0-1.4l4.6-4.6a1 1 0 0 1 1.4 0Z"></path>
+          </svg>
+        </button>
+        <img class="lightbox-image" alt="">
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9.3 18.3a1 1 0 0 1 0-1.4l3.9-3.9-3.9-3.9a1 1 0 0 1 1.4-1.4l4.6 4.6a1 1 0 0 1 0 1.4l-4.6 4.6a1 1 0 0 1-1.4 0Z"></path>
+          </svg>
+        </button>
+      `;
+
+      document.body.appendChild(overlay);
+    }
+
+    const lightboxImage = overlay.querySelector('.lightbox-image');
+    const btnClose = overlay.querySelector('.lightbox-close');
+    const btnPrev = overlay.querySelector('.lightbox-prev');
+    const btnNext = overlay.querySelector('.lightbox-next');
+
+    let activeIndex = 0;
+    let lastFocus = null;
+
+    const setImage = (idx) => {
+      const nextIndex = (idx + images.length) % images.length;
+      const img = images[nextIndex];
+      activeIndex = nextIndex;
+      lightboxImage.src = img.currentSrc || img.src;
+      lightboxImage.alt = img.alt || `Image ${nextIndex + 1}`;
+    };
+
+    const open = (idx) => {
+      lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      setImage(idx);
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('is-open');
+      document.body.classList.add('is-lightbox-open');
+      btnClose.focus();
+    };
+
+    const close = () => {
+      overlay.setAttribute('aria-hidden', 'true');
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('is-lightbox-open');
+      if (lastFocus) lastFocus.focus();
+    };
+
+    images.forEach((img, idx) => {
+      img.tabIndex = 0;
+      img.addEventListener('click', () => open(idx));
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open(idx);
+        }
+      });
+    });
+
+    btnClose.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) close();
+    });
+
+    btnPrev.addEventListener('click', () => setImage(activeIndex - 1));
+    btnNext.addEventListener('click', () => setImage(activeIndex + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('is-open')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setImage(activeIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setImage(activeIndex + 1);
+      }
+    });
+  }
+
   async function bootI18n() {
     let lang = getLang();
     document.documentElement.lang = lang;
@@ -152,6 +255,8 @@
         updateLangToggleButton(lang, messages);
       });
     });
+
+    bootGalleryLightbox();
   }
 
   if (document.readyState === 'loading') {

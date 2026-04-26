@@ -16,5 +16,42 @@
     "greeting": "Hi",
     "p1": "I'm Diana, a Portuguese photographer and filmmaker with a deep love for visual storytelling. With a degree in Digital Arts and Multimedia from ESAD, I've built a practice rooted in both technical craft and artistic curiosity, always searching for the image that says what words can't.",
     "p2": "Based in Porto, I work on projects locally and abroad, drawn to the kind of work that pushes creative boundaries and leaves a mark. I thrive on experimentation, adapt quickly to new environments, and bring genuine passion to every project I take on."
+    ,
+    "p3": "If you're building something that deserves to be seen, I'd love to be part of it."
+  },
+  "projects": {
+    "aqua": {
+      "title": "Aqua",
+      "p1": "Aqua is a photography project focused on the sensitive observation of river water, not only as a natural element, but as a symbol of movement, passage and transformation.",
+      "p2": "More than documenting a landscape, this project is a visual study of texture, light and rhythm. The photographs explore the relationship between the natural and the abstract, showing how water can take on different expressions depending on the frame, the light or the moment.",
+      "p3": "The river water, always in flow, served as a metaphor for the creative process itself: constant, unpredictable, alive."
+    },
+    "reflexo": {
+      "title": "Reflexo",
+      "p1": "This photographic project was developed in a university context based on a single word-theme: reflection.",
+      "p2": "From this seemingly simple starting point, I delved into a visual and conceptual exploration of the multiple layers that the term can carry, from the literal mirror to the deepest introspection.",
+      "p3": "This work reflects a sensitive and subjective exploration of the relationship between myself and the city where I grew up, Amarante. The images, characterized by a melancholic and dreamlike tone, reinforce the idea of an \"impossible city\", a city that is not only a geographical space, but also a reflection of my emotions and memories. This perspective gives the work a personal and enigmatic dimension, where reality and subjectivity come together."
+    },
+    "genesis": {
+      "title": "Genesis",
+      "p1": "This project was developed in a university context, where the proposal was to develop a photobook based on a song. Genesis, by the artist RAYE, was the chosen one.",
+      "p2": "The photobook thus emerges as a collection of visual emotions, where the experimental intersects with the aesthetic, and where playing with the image was essential to achieve a result that was more sensorial and aesthetic than literal.",
+      "p3": "The creative process was guided by freedom of interpretation, allowing me to explore new visual approaches and develop a bolder and more intuitive look."
+    },
+    "pele": {
+      "title": "Cartography of the Skin",
+      "p1": "In this work, I take the skin as an intimate and symbolic territory, exploring the body in a fragmented way through black and white photography. More than an anatomical representation, each image is an isolated fragment that gains autonomy and invites sensory and emotional interpretations—internal landscapes that carry marks, memories and affections.",
+      "p2": "The absence of color is an intentional choice: it reduces the image to its formal essence and intensifies texture, light and shadow, revealing details that normally go unnoticed. It is in these details that I find poetry and truth.",
+      "p3": "\"Cartography of the Skin\" is an invitation to look slowly—to touch with your eyes what we so often hide from ourselves and others."
+    },
+    "t1": {
+      "title": "T1 Jams",
+      "p1": "T1 Jams was launched as an initiative created by Eduardo Hora, Guilherme Aguiar and Joana Pinto with the aim of promoting new emerging artists from Porto. More than just a concert, it is a space for sharing and expression for lovers of music and art where, in an intimate setting, the artist and the audience are part of creating a moment in which the present takes precedence over everything else.",
+      "p2": "The first edition featured performances by ManWillOnly and Lopo Romão."
+    },
+    "biennale": {
+      "title_html": "Porto Design Biennale",
+      "p1": "One of my most recent professional challenges was capturing the 4th edition of Porto Design Biennale, themed Time is Present. Designing the Common — a project with a real and lasting impact on communities. This selection is a small glimpse of what the Biennale was."
+    }
   }
 }

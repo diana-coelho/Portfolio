@@ -16,5 +16,42 @@
     "greeting": "Olá",
     "p1": "Sou a Diana, fotógrafa e realizadora portuguesa com um profundo amor pela narrativa visual. Com uma licenciatura em Artes Digitais e Multimédia pela ESAD, construí uma prática enraizada tanto no domínio técnico como na curiosidade artística, sempre à procura da imagem que diz o que as palavras não conseguem.",
     "p2": "Baseada no Porto, trabalho em projetos que desafiam os limites criativos e deixam marca. Prospero na experimentação, adapto-me rapidamente a novos ambientes e trago uma paixão genuína a cada projeto que abraço."
+    ,
+    "p3": "Se estás a construir algo que merece ser visto, adorava fazer parte disso."
+  },
+  "projects": {
+    "aqua": {
+      "title": "Aqua",
+      "p1": "Aqua é um projeto fotográfico focado na observação sensível da água dos rios, não apenas como elemento natural, mas como símbolo de movimento, passagem e transformação.",
+      "p2": "Mais do que documentar uma paisagem, este projeto é um estudo visual de textura, luz e ritmo. As fotografias exploram a relação entre o natural e o abstrato, mostrando como a água pode assumir diferentes expressões consoante o enquadramento, a luz ou o momento.",
+      "p3": "A água do rio, sempre em fluxo, serviu de metáfora para o próprio processo criativo: constante, imprevisível, viva."
+    },
+    "reflexo": {
+      "title": "Reflexo",
+      "p1": "Este projeto fotográfico foi desenvolvido em contexto universitário a partir de uma única palavra-tema: reflexo.",
+      "p2": "A partir deste ponto de partida aparentemente simples, mergulhei numa exploração visual e conceptual das múltiplas camadas que o termo pode encerrar, desde o espelho literal à introspeção mais profunda.",
+      "p3": "Este trabalho reflete uma exploração sensível e subjetiva da relação entre mim própria e a cidade onde cresci, Amarante. As imagens, caracterizadas por um tom melancólico e onírico, reforçam a ideia de uma \"cidade impossível\", uma cidade que não é apenas um espaço geográfico, mas também um reflexo das minhas emoções e memórias. Esta perspetiva confere ao trabalho uma dimensão pessoal e enigmática, onde a realidade e a subjetividade se encontram."
+    },
+    "genesis": {
+      "title": "Genesis",
+      "p1": "Este projeto foi desenvolvido em contexto universitário, onde a proposta consistia em criar um photobook a partir de uma música. Genesis, da artista RAYE, foi a escolhida.",
+      "p2": "O photobook surge assim como uma coleção de emoções visuais, onde o experimental se cruza com o estético, e onde brincar com a imagem foi essencial para alcançar um resultado mais sensorial e estético do que literal.",
+      "p3": "O processo criativo foi guiado pela liberdade de interpretação, permitindo-me explorar novas abordagens visuais e desenvolver um olhar mais arrojado e intuitivo."
+    },
+    "pele": {
+      "title": "Cartografia da Pele",
+      "p1": "Neste trabalho, parto da pele como território íntimo e simbólico, explorando o corpo de forma fragmentada através da fotografia a preto e branco. Mais do que uma representação anatómica, cada imagem é um recorte isolado que ganha autonomia e convida a interpretações sensoriais e emocionais — paisagens internas que carregam marcas, memórias e afetos.",
+      "p2": "A ausência de cor é uma escolha intencional: reduz a imagem à sua essência formal e intensifica a textura, a luz e a sombra, revelando detalhes que normalmente passam despercebidos. É nesses detalhes que encontro poesia e verdade.",
+      "p3": "\"Cartografia da Pele\" é um convite a olhar devagar — a tocar com os olhos aquilo que tantas vezes escondemos de nós próprios e dos outros."
+    },
+    "t1": {
+      "title": "T1 Jams",
+      "p1": "T1 Jams surgiu como uma iniciativa criada por Eduardo Hora, Guilherme Aguiar e Joana Pinto com o objetivo de promover novos artistas emergentes do Porto. Mais do que um concerto, é um espaço de partilha e expressão para amantes da música e da arte onde, num ambiente íntimo, o artista e o público fazem parte da criação de um momento em que o presente se sobrepõe a tudo o resto.",
+      "p2": "A primeira edição contou com atuações de ManWillOnly e Lopo Romão."
+    },
+    "biennale": {
+      "title_html": "Porto Design Biennale",
+      "p1": "Um dos meus desafios profissionais mais recentes foi documentar a 4.ª edição da Porto Design Biennale, com o tema \"O Tempo é Presente. Desenhar o Comum.\" — um projeto com um impacto real e duradouro nas comunidades. Esta seleção é um pequeno vislumbre do que foi a Biennale."
+    }
   }
 }
