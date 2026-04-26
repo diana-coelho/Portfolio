@@ -119,10 +119,7 @@
   }
 
   function bootGalleryLightbox() {
-    const gallery = document.querySelector('[data-gallery]');
-    if (!gallery) return;
-
-    const images = Array.from(gallery.querySelectorAll('img'));
+    const images = Array.from(document.querySelectorAll('img.gallery-img'));
     if (!images.length) return;
 
     let overlay = document.querySelector('.lightbox');

@@ -25,8 +25,8 @@
             </section>
 
             <section class="detail-gallery" aria-label="Gallery">
-                <div class="gallery-grid" data-gallery>
-                    <img class="gallery-img" src="../assets/images/projects/reflexo/1.jpg" alt="Reflexo image 1" loading="lazy" decoding="async">
+                <div class="gallery-grid" data-gallery style="margin-bottom:2rem;">
+                    <img class="gallery-img" src="../assets/images/projects/reflexo/1.jpeg" alt="Reflexo image 1" loading="lazy" decoding="async">
                     <img class="gallery-img" src="../assets/images/projects/reflexo/2.jpg" alt="Reflexo image 2" loading="lazy" decoding="async">
                     <img class="gallery-img" src="../assets/images/projects/reflexo/3.jpg" alt="Reflexo image 3" loading="lazy" decoding="async">
                     <img class="gallery-img" src="../assets/images/projects/reflexo/4.jpg" alt="Reflexo image 4" loading="lazy" decoding="async">
@@ -36,6 +36,12 @@
                     <img class="gallery-img" src="../assets/images/projects/reflexo/8.jpg" alt="Reflexo image 8" loading="lazy" decoding="async">
                     <img class="gallery-img" src="../assets/images/projects/reflexo/9.jpeg" alt="Reflexo image 9" loading="lazy" decoding="async">
                     <img class="gallery-img" src="../assets/images/projects/reflexo/10.jpg" alt="Reflexo image 10" loading="lazy" decoding="async">
+                    <!-- Video takes both columns -->
+                    <div style="grid-column: 1 / -1; width: 100%;">
+                        <video class="gallery-img" src="../assets/images/projects/reflexo/exposicao.mp4" controls style="width:100%;height:auto;display:block;background:#000;" poster="../assets/images/projects/reflexo/1.jpeg">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </section>
         </div>
@@ -46,7 +52,7 @@
                 <a href="fotografia.html" aria-current="page" data-i18n="nav.photography">PHOTOGRAPHY</a>
                 <a href="film.html" data-i18n="nav.film">FILM</a>
                 <a href="motion.html" data-i18n="nav.motion">MOTION</a>
-                <a href="#" aria-disabled="true" data-i18n-html="nav.more_html">AND<br><span>MORE</span></a>
+                <a href="more.html" data-i18n-html="nav.more_html">AND<br><span>MORE</span></a>
             </nav>
 
             <button class="project-lang-btn" data-lang-toggle type="button" aria-label="Switch to Portuguese">PT.</button>
